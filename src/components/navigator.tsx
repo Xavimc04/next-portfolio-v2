@@ -1,6 +1,8 @@
+import AuthButton from "./auth-button";
+
 export default function Navigator() {
-    return <nav className="w-full bg-white p-3 shadow-md flex justify-between items-center">
-        <div className="flex items-center">
+    return <nav className="w-full p-3 flex justify-between items-center text-black">
+        <div className="flex items-center hidden md:flex">
             <h1 className="flex items-center text-3xl font-extrabold">
                 Portfolio
                 <span className="bg-red-100 text-red-800 font-semibold mr-2 px-2.5 py-0.5 rounded ml-2 text-lg">FULLSTACK</span>
@@ -14,15 +16,13 @@ export default function Navigator() {
             </ul>
         </div>
 
+        <span className="material-icons block md:hidden text-gray-600 text-2xl cursor-pointer">menu</span>
+
         <div className="flex items-center gap-5 text-gray-600">
             <span title="Notifications/News" className="material-symbols-outlined cursor-pointer">notifications</span>
-            <span title="Theme" className="material-symbols-outlined cursor-pointer">light_mode</span>
+            <span title="Theme" className="material-symbols-outlined cursor-pointer">light_mode</span> 
 
-            {/* <div className="bg-red-400 text-white rounded-full p-2.5 text-md">
-                XM
-            </div> */}
-
-            <button className="py-2.5 px-10 bg-red-400 text-white rounded-lg">Login</button>
+            <AuthButton />
         </div>
     </nav>
 }
