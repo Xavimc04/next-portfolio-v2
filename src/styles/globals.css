@@ -5,4 +5,57 @@
 
 html, body {
     overflow-x: hidden;
+} 
+
+.image-ratio {
+    width: 30px;
+    margin-right: 15px;
+    aspect-ratio: 4/3;
+    object-fit: contain;
+    mix-blend-mode: multiply; 
+}  
+
+.section {
+    position: absolute;
+    display: flex;
+    z-index: -1;
+    flex-direction: column;
+    align-items: center;
+    min-height: 550px;
+    top: 0;
+    width: 100%;
+    padding-top: 100px;
+    background: #b0a2ff;
+}
+
+.curve {
+    position: absolute;
+    z-index: -1;
+    height: 250px;
+    width: 100%;
+    bottom: 0;
+    text-align: center;
+}
+
+.curve::before {
+    content: '';
+    display: block;
+    position: absolute;
+    border-radius: 100% 50%;
+    width: 55%;
+    height: 100%;
+    transform: translate(85%, 60%);
+    background-color: white;
+}
+
+.curve::after {
+    content: '';
+    display: block;
+    position: absolute;
+    border-radius: 100% 50%;
+    width: 55%;
+    height: 100%;
+    background-color: #b0a2ff;
+    transform: translate(-4%, 40%);
+    z-index: -1;
 }
