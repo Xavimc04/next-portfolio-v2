@@ -1,0 +1,29 @@
+{
+    "timeline" : [
+        {
+            "title": "Start coding (FiveM)", 
+            "date": "October, 2020",
+            "description": "I started to be interested in the development on the FiveM platform, at that time it was not very common to know how to develop mods in Lua for the servers that existed. I stayed on this platform almost until the beginning of 2022 (obviously as a hobby)."
+        }, 
+        {
+            "title": "Microcomputer systems and networks at Monlau",
+            "date": "September, 2021", 
+            "description": "I started in the middle grade of system and network administrator to be able to access years later to the higher grade of development, 2 years later I graduated."
+        }, 
+        {
+            "title": "Call center, SOSMATIC", 
+            "date": "Octuber, 2022", 
+            "description": "Once I finished high school I started working as a technical support in telecommunications, I learned almost everything about domestic incidents on fiber, telephony, cell phones, etc.. "
+        }, 
+        {
+            "title": "Web application development at Monlau", 
+            "date": "September, 2023", 
+            "description": "Once I finished high school I enrolled in the higher cycle of application development, currently I am still studying it until 2024. "
+        }, 
+        {
+            "title": "Fullstack developer, Avannubo", 
+            "date": "February, 2023", 
+            "description": "Despite not having any degree but having 3 years as a self-taught developer I was hired as a fullstack developer in the company where I am right now, mainly working with technologies such as: Laravel, SQL, Postgre, React (the least, we invest in this technology for browser extensions), React Native (for the company's internal mobile app). "
+        }
+    ]
+}

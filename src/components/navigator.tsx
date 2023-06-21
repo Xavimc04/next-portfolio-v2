@@ -1,9 +1,9 @@
 import AuthButton from "./auth-button";
 
 export default function Navigator() {
-    return <nav className="w-full p-3 flex justify-between items-center text-black">
+    return <nav className="w-full p-3 flex justify-between items-center">
         <div className="flex items-center hidden md:flex">
-            <h1 className="flex items-center text-3xl font-extrabold">
+            <h1 className="flex items-center text-3xl text-white font-extrabold">
                 Portfolio
                 <span className="bg-violet-100 text-violet-800 font-semibold mr-2 px-2.5 py-0.5 rounded ml-2 text-lg">FULLSTACK</span>
             </h1>

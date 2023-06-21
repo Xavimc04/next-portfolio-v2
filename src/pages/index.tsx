@@ -3,9 +3,11 @@ import Navigator from "@/components/navigator"
 import { getGithubRepositories } from "@/services/github";
 import { useEffect, useState } from "react"
 import moment from "moment";
+import TimeLine from "@/components/time-line";
 
 export default function Home() {
     const [repositories, setRepos] = useState<any>([]);
+    const [filter, handleFilter] = useState<string>(''); 
     
     const fetchRepositories = async () => {
         const response = await getGithubRepositories(); 
@@ -17,7 +19,7 @@ export default function Home() {
 
     useEffect(() => {
         fetchRepositories(); 
-    }, [])
+    }, []) 
 
     return <>
         <div className="flex flex-col items-center z-10">
@@ -40,16 +42,27 @@ export default function Home() {
                     <img src="https://talently.tech/blog/wp-content/uploads/2023/01/sueldo-de-un-programador.png" className="object-scale-down" style={{ maxWidth: '500px' }} />
                 </div>  
 
-                <div className="w-full mt-40">
-                    
-                    <h2 className="text-4xl font-extrabold">Github Repositories</h2>
-                    <p className="my-4 text-lg text-gray-500">{ repositories ? repositories.length : 0 } total repos...</p>
 
-                    <input type="text" className="bg-black text-white mb-10" placeholder="Filter here..." />
+                <div className="w-11/12 md:w-9/12 mt-60 flex flex-col md:flex-row items-center">
+                    <div className="mr-10 flex flex-row md:flex-col w-11/12 items-center mb-20 md:mb-0 md:h-[300px]">
+                        <img className="w-20" src="https://mybacktolifechiropractic.com/wp-content/uploads/2016/06/Clock-PNG-Clipart.png" alt="Clock" />
+                        <div className="flex-1 my-5 bg-violet-500 opacity-20 sm:h-[2px] sm:ml-5 md:w-[2px]"></div>
+                        <span className="sm:ml-5 md:rotate-[-90deg] md:mt-5 md:mb-5">Timeline</span>
+                    </div>
+
+                    <TimeLine />
+                </div>
+
+                {/* Arrows: https://www.npmjs.com/package/react-horizontal-scrolling-menu */}
+                <div className="w-9/12 mt-40">
+                    <h2 className="text-4xl font-extrabold">Github Repositories</h2> 
+
+                    <input type="text" value={ filter } onChange={(e) => handleFilter(e.target.value)} className="bg-gray-50 mt-5 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-violet-500 focus:border-violet-500 block w-full lg:w-2/4 p-2.5" placeholder="Monster maze" />
+                    <p className="mt-2 text-sm text-gray-500 mb-10">Apply filter to search into my { repositories ? repositories.length : 0 } Github repositories...</p>
 
                     <div className="flex overflow-x-auto space-x-8 w-full mb-10">
                         {
-                            repositories && repositories.map((repo:any) => {
+                            repositories && repositories.filter((repo:any) => repo.name.includes(filter)).map((repo:any) => {
                                 return <div className="bg-violet-300 mr-10 rounded-lg p-5 flex flex-col" style={{ minWidth: '400px'}}>
                                     <h3 className="text-2xl flex items-center">
                                         <a title="View repository" href={ repo.html_url } target="_BLANK" className="material-symbols-outlined bg-violet-100 text-violet-500 p-2 mr-3 rounded-lg">rocket_launch</a>
@@ -77,18 +90,15 @@ export default function Home() {
                 - Dropdown to logout
                 - Add google to sign-in option (Apple, Gmail, Twitter, etc)
                 - Favicon
-                - My own image
-                - Roadmap de trabajos y estudios
+                - My own image 
                 - Certificaciones
                 - CV
-                - Skills/tecnologias
-                - Proyectos (Link con github)
+                - Skills/tecnologias 
                 - Publicaciones de twitter
-                - Formulario de contacto
-                - Footer
+                - Formulario de contacto 
             */}
 
-            {/* <Footer /> */}
+            <Footer />
         </div>
 
         <section className="section"> 

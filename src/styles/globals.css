@@ -59,3 +59,12 @@ html, body {
     transform: translate(-4%, 40%);
     z-index: -1;
 }
+
+*::-webkit-scrollbar {
+    display: none;
+}
+
+* {
+    -ms-overflow-style: none; 
+    scrollbar-width: none;  
+}
