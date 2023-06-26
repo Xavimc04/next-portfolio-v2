@@ -3,14 +3,15 @@ import Navigator from "@/components/navigator"
 import { getGithubRepositories } from "@/services/github";
 import { useEffect, useState } from "react"
 import moment from "moment";
-import TimeLine from "@/components/time-line";
+import TimeLine from "@/components/time-line"; 
+import RenderStack from "@/components/stack";
 
 export default function Home() {
     const [repositories, setRepos] = useState<any>([]);
     const [filter, handleFilter] = useState<string>(''); 
     
     const fetchRepositories = async () => {
-        const response = await getGithubRepositories(); 
+        const response = await getGithubRepositories();  
 
         if(response) {
             setRepos(response)
@@ -53,23 +54,24 @@ export default function Home() {
                     <TimeLine />
                 </div>
 
-                {/* Arrows: https://www.npmjs.com/package/react-horizontal-scrolling-menu */}
-                <div className="w-9/12 mt-40">
+                <RenderStack />
+
+                <div className="w-11/12 mt-40">
                     <h2 className="text-4xl font-extrabold">Github Repositories</h2> 
 
                     <input type="text" value={ filter } onChange={(e) => handleFilter(e.target.value)} className="bg-gray-50 mt-5 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-violet-500 focus:border-violet-500 block w-full lg:w-2/4 p-2.5" placeholder="Monster maze" />
                     <p className="mt-2 text-sm text-gray-500 mb-10">Apply filter to search into my { repositories ? repositories.length : 0 } Github repositories...</p>
 
-                    <div className="flex overflow-x-auto space-x-8 w-full mb-10">
+                    <div className="flex flex-wrap w-full mb-10 gap-7 justify-between">
                         {
                             repositories && repositories.filter((repo:any) => repo.name.includes(filter)).map((repo:any) => {
-                                return <div className="bg-violet-300 mr-10 rounded-lg p-5 flex flex-col" style={{ minWidth: '400px'}}>
-                                    <h3 className="text-2xl flex items-center">
+                                return <div className="bg-violet-300 rounded-lg p-5 flex flex-col w-full md:w-[350px] 2xl:w-[400px]">
+                                    <h3 className="text-2xl flex items-center select-none">
                                         <a title="View repository" href={ repo.html_url } target="_BLANK" className="material-symbols-outlined bg-violet-100 text-violet-500 p-2 mr-3 rounded-lg">rocket_launch</a>
                                         { repo.name }
                                     </h3>
 
-                                    <p className="mt-3 flex-1">{ repo.description }</p> 
+                                    <p className="mt-3 flex-1">{ repo.description && repo.description.length > 0 ? repo.description : <a className="italic text-gray-600">No description yet</a> }</p> 
 
                                     <div className="mt-20 flex items-center justify-between">
                                         { repo.language }

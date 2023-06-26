@@ -25,5 +25,8 @@
             "date": "February, 2023", 
             "description": "Despite not having any degree but having 3 years as a self-taught developer I was hired as a fullstack developer in the company where I am right now, mainly working with technologies such as: Laravel, SQL, Postgre, React (the least, we invest in this technology for browser extensions), React Native (for the company's internal mobile app). "
         }
+    ], 
+    "stack": [
+        "css", "database", "git", "github", "js", "laravel", "lua", "mongodb", "nodejs", "npm", "php", "react", "visualstudio"
     ]
 }

@@ -60,6 +60,19 @@ html, body {
     z-index: -1;
 }
 
+.big-title { 
+    font-size: 29.42vmin;
+    writing-mode: unset;
+    letter-spacing: -0.3rem;
+    white-space: pre;
+    color: rgba(0, 0, 0, 0.04); 
+    text-rendering: geometricPrecision;
+    left: -25rem; 
+    opacity: 1;
+    bottom: 10px; 
+    z-index: -1;
+}
+
 *::-webkit-scrollbar {
     display: none;
 }
