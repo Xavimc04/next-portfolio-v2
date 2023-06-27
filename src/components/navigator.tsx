@@ -5,7 +5,7 @@ export default function Navigator() {
         <div className="flex items-center hidden md:flex">
             <h1 className="flex items-center text-3xl text-white font-extrabold">
                 Portfolio
-                <span className="bg-violet-100 text-violet-800 font-semibold mr-2 px-2.5 py-0.5 rounded ml-2 text-lg">FULLSTACK</span>
+                <span className="bg-red-100 text-red-800 font-semibold mr-2 px-2.5 py-0.5 rounded ml-2 text-lg">FULLSTACK</span>
             </h1>
             
             <ul className="flex ml-10 flex-wrap gap-7 text-white">

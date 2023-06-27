@@ -17,10 +17,10 @@ export default function RenderStack() {
     return <div className="mt-40 flex flex-wrap gap-20 justify-center w-11/12 relative">
         {
             stackItems && stackItems.map((item:string) => {
-                return <img title={ item } key={ item } width={ 80 } className="cursor-pointer" src={ `/stack/${ item }.svg` } alt={ item } />
+                return <img title={ item } key={ item } width={ 80 } className="cursor-pointer select-none" draggable={ false } src={ `/stack/${ item }.svg` } alt={ item } />
             })
         }
 
-        <div className="absolute big-title">Stack</div>
+        <div className="absolute big-title select-none">Stack</div> 
     </div>
 } 
