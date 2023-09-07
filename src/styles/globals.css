@@ -24,9 +24,6 @@ html, body {
     min-height: 550px;
     top: 0;
     width: 100%;
-    padding-top: 100px; 
-    background-image: linear-gradient(rgba(102, 102, 102, 0.465) .1em, transparent .1em), linear-gradient(90deg, rgba(102, 102, 102, 0.465) .1em, transparent .1em);
-    background-size: 5em 5em;
 }
 
 .curve {
