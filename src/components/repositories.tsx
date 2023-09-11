@@ -25,9 +25,10 @@ export default function Repositories() {
 
         <div className="flex flex-wrap w-full mb-10 gap-7 justify-between">
             {
-                repositories && repositories.filter((repo:any) => repo.name.toLowerCase().includes(filter)).map((repo:any) => {
+                repositories && repositories.filter((repo:any) => repo.name.toLowerCase().includes(filter)).map((repo:any, index:number) => {
                     return <motion.div 
                         layout
+                        key={ index }
                         initial={{ opacity: 0, scale: 0.5 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.5 }} className="bg-zinc-700 rounded-lg p-5 flex flex-col w-full md:w-[350px] 2xl:w-[400px]"

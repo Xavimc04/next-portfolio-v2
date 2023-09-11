@@ -14,7 +14,7 @@ export default function RenderStack() {
         getData(); 
     }, [])
     
-    return <div className="mt-40 flex flex-wrap gap-20 justify-center w-11/12 relative">
+    return <div id="stack" className="mt-60 flex flex-wrap gap-20 justify-center w-11/12 relative">
         {
             stackItems && stackItems.map((item:string) => {
                 return <img title={ item } key={ item } width={ 80 } className="cursor-pointer select-none" draggable={ false } src={ `/stack/${ item }.svg` } alt={ item } />

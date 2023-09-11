@@ -7,14 +7,6 @@ html, body {
     overflow-x: hidden;
 } 
 
-.image-ratio {
-    width: 30px;
-    margin-right: 15px;
-    aspect-ratio: 4/3;  
-    object-fit: contain;
-    mix-blend-mode: multiply; 
-}   
-
 .section {
     position: absolute;
     display: flex;
